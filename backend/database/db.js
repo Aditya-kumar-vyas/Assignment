@@ -4,7 +4,7 @@ async function connectoDB()
 {
        try{
             await mongoose.connect(
-              "mongodb+srv://kumarvyasaditya:Aditya008@cluster0.5mkvo.mongodb.net/"   
+               process.env.MONGODB_URI
             );
             console.log("mongodb is connected")
        }

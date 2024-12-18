@@ -5,7 +5,7 @@ const connectDb = require('./database/db')
 const authRoutes = require('./Routes/auth-routes')
 const app = express()
 
-const PORT = 3000
+
 app.use(cors())
 connectDb()
 app.use(express.json())
@@ -14,8 +14,8 @@ app.use('/api/auth' , authRoutes)
 //       res.send("hello from server")
       
 // })
-
-app.listen(PORT , ()=>{
+const port = process.env.PORT||3000
+app.listen(port , ()=>{
      console.log("Server is listening");
      
 })
